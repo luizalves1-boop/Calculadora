@@ -1,0 +1,33 @@
+public class Pilha {
+    private Nodo topo;
+    private int tam;
+
+    public Pilha() {
+        this.topo = null;
+        this.tam = 0; // guardar o tamanho da pilha
+    }
+
+    public void empilha(int x) {
+        Nodo aux = this.topo;
+        this.topo = new Nodo(x);
+        this.topo.prox = aux;
+        this.tam++;
+    }
+
+    public int desempilha() throws Exception {
+        if (this.vazia())
+            throw new Exception("Erro: A pilha esta vazia");
+        int item = this.topo.item;
+        this.topo = this.topo.prox;
+        this.tam--;
+        return item;
+    }
+
+    public boolean vazia() {
+        return (this.topo == null);
+    }
+
+    public int tamanho() {
+        return this.tam;
+    }
+}
