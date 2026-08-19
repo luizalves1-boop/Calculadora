@@ -98,9 +98,9 @@ public class Janela {
         resultado.addActionListener(e -> {
             Calculadora calculadora = new Calculadora();
             try {
-                visor.setText(String.valueOf(calculadora.calculadora(calculo)));
-                calculo = String.valueOf(calculadora.calculadora(calculo));
-                calculo = Integer.toString(calculadora.calculadora(calculo));
+                String res = Integer.toString(calculadora.calculadora(calculo));
+                visor.setText(res);
+                calculo = res;
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
